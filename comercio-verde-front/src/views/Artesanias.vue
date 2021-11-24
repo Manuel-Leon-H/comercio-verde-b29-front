@@ -1,7 +1,7 @@
 <template>
 <div>
     <product-list
-        :productos="artesanias.data"
+        :productos="artesanias"
         :categoria="'Artesanias'"
     ></product-list>
 
@@ -25,7 +25,7 @@ export default {
         this.fetchArtesanias();
     },
     methods:{
-        ...mapActions('artesania',['fetchArtesanias'])
+        ...mapActions('artesania',['fetchArtesanias']),
     }
 }
 </script>

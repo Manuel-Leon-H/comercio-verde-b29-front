@@ -7,7 +7,9 @@
             <b-col cols="4" class="mb-2"
                 v-for="item in productos" :key="item._id"
             >
-                <product-item :product="item"></product-item>
+                <product-item :product="item" @clickBtn="eliminarP"
+                    @clickBtn1="actualizarP"
+                    @clickBtn2="anadirP"></product-item>
             </b-col>
         </b-row>
     </div>
@@ -36,6 +38,17 @@ export default {
         categoria:{
             type:String,
             required:true
+        }
+    },
+    methods:{
+        eliminarP(product){
+            console.log(product);
+        },
+        actualizarP(product){
+            console.log(product._id);
+        },
+        anadirP(product){
+            console.log(product.nombre);
         }
     }
 }
