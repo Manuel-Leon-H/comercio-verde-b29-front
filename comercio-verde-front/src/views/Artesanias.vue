@@ -4,7 +4,7 @@
         :productos="artesanias"
         :categoria="'Artesanias'"
     ></product-list>
-
+    
 </div>
 </template>
 
@@ -12,6 +12,7 @@
 import {mapState,mapActions} from 'vuex';
 
 import ProductList from '@/components/ProductList.vue'
+
 
 export default {
     name:"Artesanias",

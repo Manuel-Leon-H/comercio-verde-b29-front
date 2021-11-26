@@ -1,6 +1,6 @@
 <template>
 
-<b-container>
+<b-container class="mt-3">
     <div v-if="productos.length">
         <h1 class="text-start">{{categoria}}</h1>
         <b-row>

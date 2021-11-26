@@ -3,7 +3,9 @@
       <b-container>
         <b-nav>
             <b-nav-text class="text-white me-5"><i> Apoyamos el desarrollo del campo colombiano. <strong>Comercio Verde</strong> </i> </b-nav-text>
-            <b-nav-item :to="{name:'Artesanias'}" class="ms-auto link"> Carrito </b-nav-item>
+            <b-nav-item :to="{name:'Artesanias'}" class="ms-auto"> 
+                <b-icon icon="cart4" class="link"></b-icon>
+            </b-nav-item>
         </b-nav>
       </b-container>
   </div>
