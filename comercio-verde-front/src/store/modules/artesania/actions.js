@@ -10,4 +10,12 @@ export async function fetchArtesanias({ state, commit, dispatch, rootState }){
     });
 }
 
+export async function eliminarArtesania({ dispatch },artesania){
+    return Vue.axios.delete(`/artesanias/${artesania._id}`).catch(err =>{
+        console.log(err)
+    }).finally(()=>{
+        dispatch('fetchArtesanias');
+        console.log("Producto Eliminado")
+    });
+}
 

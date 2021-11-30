@@ -14,19 +14,19 @@
     
         <p>{{ product.descripcion }}</p>
         <p class="text-start">Col${{ product.precio }}</p>
-        <div class="display-flex">
-        <b-row class="text-center">
-            <b-col cols="2">
-                <b-button @click="$emit('clickBtn',product)" class="mt-3 btn-sm" variant="danger">E</b-button>
-            </b-col>
-            <b-col cols="2">
-                <b-button @click="$emit('clickBtn1',product)" class="mt-3 btn-sm" variant="primary">A</b-button>
-            </b-col>
-            <b-col class="ms-5">
-                <b-button @click="$emit('clickBtn2',product)" class="mt-3" variant="success">Añadir</b-button>
-            </b-col>
-        </b-row>
-        </div>
+        <b-card-footer style="background: #fff" class="mt-auto border-top-0">
+            <b-row class="text-center">
+                <b-col cols="2">
+                    <b-button @click="$emit('clickBtn',product)" class="mt-3 btn-sm" variant="danger">E</b-button>
+                </b-col>
+                <b-col cols="2">
+                    <b-button @click="$emit('clickBtn1',product)" class="mt-3 btn-sm" variant="primary">A</b-button>
+                </b-col>
+                <b-col class="ms-5">
+                    <b-button @click="$emit('clickBtn2',product)" class="mt-3" variant="success">Añadir</b-button>
+                </b-col>
+            </b-row>
+        </b-card-footer>
    
     </b-card>
 </template>
@@ -34,7 +34,7 @@
 
 <script>
 
-import { BCard,BButton  } from 'bootstrap-vue'
+import { BCard,BButton,BCardFooter  } from 'bootstrap-vue'
 
 export default {
     name:"ProductItem",
@@ -45,7 +45,7 @@ export default {
         }
     },
     components:{
-        BCard,BButton
+        BCard,BButton,BCardFooter
     }
 }
 </script>

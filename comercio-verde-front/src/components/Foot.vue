@@ -1,5 +1,5 @@
 <template>
-<div style="background: #383838" class="mt-5">
+<div style="background: #383838" class="mt-3">
     <b-row class="text-center">
         <b-col cols="4" class="mt-2">
             <b-img src="https://comercioverde.herokuapp.com/media/images/footer-logo.png"></b-img>

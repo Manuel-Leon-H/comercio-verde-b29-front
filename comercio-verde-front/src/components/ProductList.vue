@@ -2,7 +2,17 @@
 
 <b-container class="mt-3">
     <div v-if="productos.length">
-        <h1 class="text-start">{{categoria}}</h1>
+        <b-row>
+            <b-col cols="8">
+                <h1 class="text-start">{{categoria}}</h1>
+            </b-col>
+            <b-col>
+                <b-button variant="primary" size="sm" class="d-flex mt-2 mb-2 ms-auto" @click="$emit('anadirproduct')">
+                    <b-icon icon="bag-plus"></b-icon>
+                </b-button>
+            </b-col>
+        </b-row>
+        
         <b-row>
             <b-col cols="4" class="mb-2"
                 v-for="item in productos" :key="item._id"
@@ -21,14 +31,15 @@
 </template>
 
 <script>
-import { BAlert } from 'bootstrap-vue';
+import { BAlert,BButton } from 'bootstrap-vue';
+import { mapActions } from 'vuex';
 
 import ProductItem from '@/components/ProductItem.vue'
 
 export default {
     name: "ListaProductos",
     components:{
-        ProductItem,BAlert
+        ProductItem,BAlert,BButton
     },
     props:{
         productos:{
@@ -41,8 +52,11 @@ export default {
         }
     },
     methods:{
+        ...mapActions('artesania',['eliminarArtesania']),
         eliminarP(product){
-            console.log(product);
+            if (this.categoria === "Artesanias") {
+                this.eliminarArtesania(product);
+            }
         },
         actualizarP(product){
             console.log(product._id);

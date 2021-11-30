@@ -3,6 +3,7 @@
     <product-list
         :productos="artesanias"
         :categoria="'Artesanias'"
+        @anadirproduct="anadir"
     ></product-list>
     
 </div>
@@ -27,6 +28,11 @@ export default {
     },
     methods:{
         ...mapActions('artesania',['fetchArtesanias']),
+        anadir(){
+            this.$router.push({
+                name: 'Crear'
+            })
+        }
     }
 }
 </script>
